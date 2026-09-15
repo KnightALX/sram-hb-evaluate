@@ -1,0 +1,39 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "gf-layout-flow"
+version = "0.7.0"
+description = "gdsfactory N5 FEOL/MEOL + 1P13M research layout workflow (SRAM-ish interconnect & hybrid-bonding) with analytical interconnect RC + geometry metrics"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [{ name = "Kai Nathaniel" }]
+keywords = ["gdsfactory", "layout", "SRAM", "hybrid-bonding", "BEOL", "FEOL", "RC"]
+dependencies = [
+  "gdsfactory>=9.40,<10",
+  "numpy>=1.24",
+  "PyYAML>=6.0",
+]
+
+[project.optional-dependencies]
+dev = [
+  "pytest>=7.4",
+  "pytest-cov>=4.1",
+]
+
+[project.scripts]
+gf-layout-demo = "gf_layout_flow.cli:main"
+gf-wl-pattern = "gf_layout_flow.cli:wl_pattern_main"
+gf-wl-hb-pattern = "gf_layout_flow.cli:wl_hb_pattern_main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+gf_layout_flow = ["py.typed", "tech/*.yaml"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]

@@ -1,0 +1,395 @@
+# TSMC N5 / N05 metallization option config for local BEOL/RC research.
+# Derived from user-provided N5 DRM excerpts — NOT an official TSMC PDK.
+# Do not redistribute DRM text/tables/PDFs.
+
+stack_option: "1P13M_M1+1x1xb1xe1ya1yb3y2yy2z"
+description: "FEOL/MEOL (OD/PO/MD/VG/VD/…) + M0..M13 + AP; HB overlays; NW/DNW/OD2/CM0* are placeholder_unverified (verify LE-001)"
+dbu_um: 0.0005  # DRM recommends 0.5 nm DBU when streaming GDS
+dbu_note: "Recommend 0.5 nm database unit (0.0005 µm) per N5 DRM DBU guideline."
+
+
+# FEOL / MEOL drawing layers — CAD;DT confirmed from T-N05-CL-DR-014 (user DRM)
+# min geom from DRM W/S or cross-section notes. Thickness = research_approx where not tabulated.
+feol:
+  OD:         { cad: 6,   datatype: 0,   role: active,        min_w_um: 0.034, min_s_um: 0.078, source: drm_ws }
+  COD_H:      { cad: 6,   datatype: 60,  role: cut_od_h,      source: drm_cad }
+  COD_V:      { cad: 6,   datatype: 61,  role: cut_od_v,      source: drm_cad }
+  COD_BLOCK:  { cad: 6,   datatype: 70,  role: cut_od_block,  source: drm_cad }
+  PO:         { cad: 17,  datatype: 0,   role: poly_gate,     min_w_um: 0.006, min_s_um: 0.045, source: drm_ws }
+  CPO:        { cad: 17,  datatype: 30,  role: cut_poly,      source: drm_cad }
+  PP:         { cad: 25,  datatype: 0,   role: pplus_implant, source: drm_cad }
+  NP:         { cad: 26,  datatype: 0,   role: nplus_implant, source: drm_cad }
+  NT_N:       { cad: 11,  datatype: 0,   role: well_block,    source: drm_cad }
+
+meol:
+  MD:   { cad: 82,  datatype: 150, role: local_interconnect, min_w_um: 0.020, min_s_um: 0.031, source: drm_ws }
+  CMD:  { cad: 82,  datatype: 250, role: cut_md,             source: drm_cad }
+  VG:   { cad: 178, datatype: 150, role: via_po_m0,          min_size_um: 0.012, pitch_um: 0.039, source: drm_ws }
+  VD:   { cad: 179, datatype: 150, role: via_md_m0,          min_size_um: 0.014, pitch_um: 0.037, source: drm_ws }
+  VDR:  { cad: 177, datatype: 150, role: rail_vd,            source: drm_cad }
+  CB:   { cad: 76,  datatype: 0,   role: passivation_open,   source: drm_cad }
+  CBD:  { cad: 169, datatype: 0,   role: passivation1,       source: drm_cad }
+  CB2:  { cad: 86,  datatype: 0,   role: passivation2,       source: drm_cad }
+  PM:   { cad: 5,   datatype: 0,   role: polyimide_open,     source: drm_cad }
+
+# PLACEHOLDER CAD numbers — NOT in attached DRM; verify against T-N05-CL-LE-001.
+# Chosen outside confirmed CAD ranges. User will核对 later.
+placeholder_unverified:
+  ask_user_for: "T-N05-CL-LE-001"
+  note: "Registered in active LayerMap with placeholder CAD#; MUST verify before any foundry use."
+  NW:   { cad: 1,  datatype: 0,   role: n_well,        source: placeholder_unverified, verify_against: T-N05-CL-LE-001 }
+  DNW:  { cad: 3,  datatype: 0,   role: deep_n_well,   source: placeholder_unverified, verify_against: T-N05-CL-LE-001 }
+  OD2:  { cad: 8,  datatype: 0,   role: thick_oxide,   source: placeholder_unverified, verify_against: T-N05-CL-LE-001 }
+  OD_12: { cad: 8, datatype: 0,   role: thick_oxide_alias, source: placeholder_unverified, verify_against: T-N05-CL-LE-001, alias_of: OD2 }
+  CM0:  { cad: 29, datatype: 0,   role: cut_m0,        source: placeholder_unverified, verify_against: T-N05-CL-LE-001 }
+  CM0A: { cad: 29, datatype: 151, role: cut_m0_a,      source: placeholder_unverified, verify_against: T-N05-CL-LE-001 }
+  CM0B: { cad: 29, datatype: 152, role: cut_m0_b,      source: placeholder_unverified, verify_against: T-N05-CL-LE-001 }
+
+# Keep a short reminder list (same names as placeholders above)
+missing_pending_le001:
+  ask_user_for: "T-N05-CL-LE-001"
+  note: "CAD# are placeholders only — replace with LE-001 values when available."
+  layers: [NW, DNW, OD2, OD_12, CM0, CM0A, CM0B]
+
+# Layer map: CAD layer # and primary drawing datatype from DRM Table 3.2.1 / cross-section
+metals:
+  M0:  { cad: 30, datatype: 151, type: M0,   x_factor: 1.0,  min_w_um: 0.014, min_s_um: 0.014, source: drm_ws }
+  M1:  { cad: 31, datatype: 171, type: M1,   x_factor: 1.2,  min_w_um: 0.020, min_s_um: 0.014, source: drm_ws }
+  M2:  { cad: 32, datatype: 151, type: Mx,   x_factor: 1.25, min_w_um: 0.020, min_s_um: 0.015, source: drm_ws }
+  M3:  { cad: 33, datatype: 251, type: Mxb,  x_factor: 1.5,  min_w_um: 0.020, min_s_um: 0.022, source: drm_ws }
+  M4:  { cad: 34, datatype: 401, type: Mxe,  x_factor: 1.5,  min_w_um: 0.020, min_s_um: 0.022, source: drm_ws }
+  M5:  { cad: 35, datatype: 950, type: Mya,  x_factor: 2.7,  min_w_um: 0.038, min_s_um: 0.038, source: drm_ws }
+  M6:  { cad: 36, datatype: 800, type: Myb,  x_factor: 2.7,  min_w_um: 0.038, min_s_um: 0.038, source: drm_ws }
+  M7:  { cad: 37, datatype: 970, type: My,   x_factor: 2.7,  min_w_um: 0.038, min_s_um: 0.038, source: drm_ws }
+  M8:  { cad: 38, datatype: 970, type: My,   x_factor: 2.7,  min_w_um: 0.038, min_s_um: 0.038, source: drm_ws }
+  M9:  { cad: 39, datatype: 970, type: My,   x_factor: 2.7,  min_w_um: 0.038, min_s_um: 0.038, source: drm_ws }
+  M10: { cad: 40, datatype: 90,  type: Myy,  x_factor: 4.5,  min_w_um: 0.062, min_s_um: 0.064, source: drm_ws }
+  M11: { cad: 41, datatype: 90,  type: Myy,  x_factor: 4.5,  min_w_um: 0.062, min_s_um: 0.064, source: drm_ws }
+  M12: { cad: 42, datatype: 40,  type: Mz,   x_factor: 26.0, min_w_um: 0.360, min_s_um: 0.360, source: drm_ws }
+  M13: { cad: 43, datatype: 40,  type: Mz,   x_factor: 26.0, min_w_um: 0.360, min_s_um: 0.360, source: drm_ws }
+  AP:  { cad: 74, datatype: 0,   type: AlRDL, x_factor: null, min_w_um: 1.8,   min_s_um: 1.8,   source: drm_ws }
+
+# Via CAD # from Table 3.2.1; datatype = metal ABOVE the via; min size from Table 2.5.2
+vias:
+  VIA0:  { cad: 50, datatype: 150, connects: [M0, M1],  min_size_um: 0.014, class: VIA0,  source: drm_ws }
+  VIA1:  { cad: 51, datatype: 150, connects: [M1, M2],  min_size_um: 0.016, class: VIAx,  source: drm_ws }
+  VIA2:  { cad: 52, datatype: 250, connects: [M2, M3],  min_size_um: 0.016, class: VIAxb, source: drm_ws }
+  VIA3:  { cad: 53, datatype: 400, connects: [M3, M4],  min_size_um: 0.020, class: VIAxe, source: drm_ws }
+  VIA4:  { cad: 54, datatype: 950, connects: [M4, M5],  min_size_um: 0.020, class: VIAya, source: drm_ws }
+  VIA5:  { cad: 55, datatype: 800, connects: [M5, M6],  min_size_um: 0.038, class: VIAyb, source: drm_ws }
+  VIA6:  { cad: 56, datatype: 970, connects: [M6, M7],  min_size_um: 0.038, class: VIAy,  source: drm_ws }
+  VIA7:  { cad: 57, datatype: 970, connects: [M7, M8],  min_size_um: 0.038, class: VIAy,  source: drm_ws }
+  VIA8:  { cad: 58, datatype: 970, connects: [M8, M9],  min_size_um: 0.038, class: VIAy,  source: drm_ws }
+  VIA9:  { cad: 59, datatype: 90,  connects: [M9, M10], min_size_um: 0.062, class: VIAyy, source: drm_ws }
+  VIA10: { cad: 60, datatype: 90,  connects: [M10, M11], min_size_um: 0.062, class: VIAyy, source: drm_ws }
+  VIA11: { cad: 61, datatype: 40,  connects: [M11, M12], min_size_um: 0.324, class: VIAz,  source: drm_ws }
+  VIA12: { cad: 62, datatype: 40,  connects: [M12, M13], min_size_um: 0.324, class: VIAz,  source: drm_ws }
+  RV:    { cad: 85, datatype: 0,   connects: [M13, AP],  min_size_um: 2.7,   class: RV,   source: drm_ws }
+
+# Research overlays (NOT in N5 DRM) — high CAD numbers to avoid collision
+overlays:
+  HB_PAD: { cad: 900, datatype: 0, note: "Hybrid bonding pad — research overlay" }
+  HB_VIA: { cad: 901, datatype: 0, note: "Hybrid bonding via — research overlay" }
+  LABEL:  { cad: 990, datatype: 0, note: "Utility text" }
+  FLOORPLAN: { cad: 991, datatype: 0, note: "Utility floorplan" }
+  Chip_Boundary: { cad: 108, datatype: 250, note: "Optional chip boundary" }
+  prBoundary: { cad: 108, datatype: 0, note: "Optional prBoundary" }
+
+# Exact Cu thickness is NOT in attached W/S tables.
+# Research approximations: t_metal ≈ t_base * x_factor, t_base = 0.036 µm (1X thin-metal baseline).
+# Via thickness ≈ similar order as metal class ILD height (research_approx).
+thickness_um:
+  baseline_1x_um: 0.036
+  baseline_note: "1X thin-metal research baseline; scaled by DRM X factor per metal class"
+  feol_meol:
+    OD:  { thickness: 0.050, source: research_approx }
+    PO:  { thickness: 0.040, source: research_approx }
+    MD:  { thickness: 0.030, source: research_approx }
+    VG:  { thickness: 0.035, source: research_approx }
+    VD:  { thickness: 0.035, source: research_approx }
+  metals:
+    M0:  { thickness: 0.036, source: research_approx }
+    M1:  { thickness: 0.043, source: research_approx }   # 1.2X
+    M2:  { thickness: 0.045, source: research_approx }   # 1.25X
+    M3:  { thickness: 0.054, source: research_approx }   # 1.5X
+    M4:  { thickness: 0.054, source: research_approx }   # 1.5X
+    M5:  { thickness: 0.097, source: research_approx }   # 2.7X
+    M6:  { thickness: 0.097, source: research_approx }   # 2.7X
+    M7:  { thickness: 0.097, source: research_approx }   # 2.7X
+    M8:  { thickness: 0.097, source: research_approx }   # 2.7X
+    M9:  { thickness: 0.097, source: research_approx }   # 2.7X
+    M10: { thickness: 0.162, source: research_approx }   # 4.5X
+    M11: { thickness: 0.162, source: research_approx }   # 4.5X
+    M12: { thickness: 0.936, source: research_approx }   # 26X
+    M13: { thickness: 0.936, source: research_approx }   # 26X
+    AP:  { thickness: 1.450, source: research_approx }   # Al RDL typical research value
+  vias:
+    VIA0:  { thickness: 0.040, source: research_approx }
+    VIA1:  { thickness: 0.045, source: research_approx }
+    VIA2:  { thickness: 0.050, source: research_approx }
+    VIA3:  { thickness: 0.055, source: research_approx }
+    VIA4:  { thickness: 0.080, source: research_approx }
+    VIA5:  { thickness: 0.090, source: research_approx }
+    VIA6:  { thickness: 0.090, source: research_approx }
+    VIA7:  { thickness: 0.090, source: research_approx }
+    VIA8:  { thickness: 0.090, source: research_approx }
+    VIA9:  { thickness: 0.140, source: research_approx }
+    VIA10: { thickness: 0.140, source: research_approx }
+    VIA11: { thickness: 0.800, source: research_approx }
+    VIA12: { thickness: 0.800, source: research_approx }
+    RV:    { thickness: 1.000, source: research_approx }
+  overlays:
+    HB_VIA: { thickness: 0.500, source: research_approx }
+    HB_PAD: { thickness: 0.800, source: research_approx }
+
+# ---------------------------------------------------------------------------
+# Analytical interconnect RC lookup (user-measured table — do not invent values)
+# 用户实测互连 RC 查表；表中未列的 Metal 按金属序号在相邻已给层之间折算：
+#   R 用对数平均 R = sqrt(R_lo * R_hi)；C 用算术平均 C = (C_lo + C_hi)/2
+# M0：无更密邻层，映射为 M1（source=extrapolated / mapped_to_M1）
+# M12/M13：实测表止于 M11，映射为 M11
+# AP：无邻层可折算，留空（loader 返回 null / skip）
+# Via / HB：按实例（按个）；分析默认电容用 C（非 C+cc），仍存 c_plus_cc_ff
+# ---------------------------------------------------------------------------
+interconnect_rc:
+  units:
+    r_metal: Ohm/um
+    c_metal: fF/um
+    r_lumped: Ohm
+    c_lumped: fF
+  note_zh: |
+    用户实测查表（Metal 每微米 R/Ctotal，另存 width/space/Cc/Cbottom/Ctop；
+    Via 类与 HB 为按实例集总，默认电容用 C 非 C+cc）。
+    表中未列 Metal（含 M2/M0/M4…）由相邻已给层折算：R=sqrt 对数平均，C=线性平均。
+    实测表止于 M11：M12/M13 映射到 M11。VIA0 不在表中，按薄 via 映射到 V1-V2。
+    本表为研究用解析 RC，不是 foundry 提取结果。
+  interpolation_notes:
+    rule_r: "log-average: R = sqrt(R_lo * R_hi) between nearest tabulated metal indices"
+    rule_c: "linear-average: C = (C_lo + C_hi) / 2"
+    m0: "extrapolated / mapped_to_M1 (no denser tabulated neighbor below M1)"
+    m12_m13: "mapped_to_M11 (measured table ends at M11; nearest tabulated above)"
+    ap: "null — skip unless a tabulated neighbor exists"
+    measured_source: "user_measured_lookup"
+    interpolated_source: "interpolated_from_user_measured"
+    via_default: "default thin via class V1-V2: R=30 Ohm, C=0.1 fF per instance (analysis uses C not C+cc)"
+    via_classes: "V1-V2 / V3-V4 / V5-V9 / V10-V11 measured; VIA0→V1-V2 mapped; VIA12→V10-V11 mapped"
+    capacitance_default: "use C (c_ff) for analysis; c_plus_cc_ff stored for reference"
+  metals_per_um:
+    M0:
+      r_ohm_per_um: 60.0
+      c_ff_per_um: 0.22
+      width_um: 0.021
+      space_um: 0.021
+      Cc: 0.0857
+      Cbottom: 0.0645
+      Ctop: 0.034
+      source: extrapolated
+      mapped_to: M1
+      parents: [M1]
+      note: "No denser tabulated neighbor; use M1 measured values (map M0→M1)"
+    M1:
+      r_ohm_per_um: 60.0
+      c_ff_per_um: 0.22
+      width_um: 0.021
+      space_um: 0.021
+      Cc: 0.0857
+      Cbottom: 0.0645
+      Ctop: 0.034
+      source: user_measured_lookup
+    M2:
+      r_ohm_per_um: 32.863353450309965
+      c_ff_per_um: 0.215
+      source: interpolated_from_user_measured
+      parents: [M1, M3]
+      note: "R=sqrt(R_M1*R_M3); C=(C_M1+C_M3)/2"
+    M3:
+      r_ohm_per_um: 18.0
+      c_ff_per_um: 0.21
+      width_um: 0.021
+      space_um: 0.021
+      Cc: 0.0874
+      Cbottom: 0.0356
+      Ctop: 0.0336
+      source: user_measured_lookup
+    M4:
+      r_ohm_per_um: 11.224972160321824
+      c_ff_per_um: 0.185
+      source: interpolated_from_user_measured
+      parents: [M3, M5]
+      note: "R=sqrt(R_M3*R_M5); C=(C_M3+C_M5)/2"
+    M5:
+      r_ohm_per_um: 7.0
+      c_ff_per_um: 0.16
+      width_um: 0.04
+      space_um: 0.04
+      Cc: 0.0564
+      Cbottom: 0.0423
+      Ctop: 0.0352
+      source: user_measured_lookup
+    M6:
+      r_ohm_per_um: 5.422176684690384
+      c_ff_per_um: 0.15
+      source: interpolated_from_user_measured
+      parents: [M5, M7]
+      note: "R=sqrt(R_M5*R_M7); C=(C_M5+C_M7)/2"
+    M7:
+      r_ohm_per_um: 4.2
+      c_ff_per_um: 0.14
+      width_um: 0.04
+      space_um: 0.04
+      Cc: 0.0764
+      Cbottom: 0.0369
+      Ctop: 0.0344
+      source: user_measured_lookup
+    M8:
+      r_ohm_per_um: 3.1080540535840107
+      c_ff_per_um: 0.123
+      source: interpolated_from_user_measured
+      parents: [M7, M9]
+      note: "R=sqrt(R_M7*R_M9); C=(C_M7+C_M9)/2"
+    M9:
+      r_ohm_per_um: 2.3
+      c_ff_per_um: 0.106
+      width_um: 0.04
+      space_um: 0.04
+      Cc: 0.0764
+      Cbottom: 0.0369
+      Ctop: 0.0344
+      source: user_measured_lookup
+    M10:
+      r_ohm_per_um: 1.3221195104830727
+      c_ff_per_um: 0.087
+      source: interpolated_from_user_measured
+      parents: [M9, M11]
+      note: "R=sqrt(R_M9*R_M11); C=(C_M9+C_M11)/2"
+    M11:
+      r_ohm_per_um: 0.76
+      c_ff_per_um: 0.068
+      width_um: 0.36
+      space_um: 0.36
+      Cc: 0.0576
+      Cbottom: 0.0538
+      Ctop: 0.0591
+      source: user_measured_lookup
+    M12:
+      r_ohm_per_um: 0.76
+      c_ff_per_um: 0.068
+      width_um: 0.36
+      space_um: 0.36
+      Cc: 0.0576
+      Cbottom: 0.0538
+      Ctop: 0.0591
+      source: extrapolated
+      mapped_to: M11
+      parents: [M11]
+      note: "Measured table ends at M11; map M12→M11 (nearest tabulated above)"
+    M13:
+      r_ohm_per_um: 0.76
+      c_ff_per_um: 0.068
+      width_um: 0.36
+      space_um: 0.36
+      Cc: 0.0576
+      Cbottom: 0.0538
+      Ctop: 0.0591
+      source: extrapolated
+      mapped_to: M11
+      parents: [M11]
+      note: "Measured table ends at M11; map M13→M11 (nearest tabulated above)"
+    AP:
+      r_ohm_per_um: null
+      c_ff_per_um: null
+      source: null_skip
+      note: "No tabulated neighbor; leave null / skip"
+  lumped:
+    HB:
+      size_um: 0.324
+      r_ohm: 0.165
+      c_ff: 1.0
+      c_plus_cc_ff: 1.3
+      source: user_measured_lookup
+      per: instance
+      note: "Hybrid bonding pad/via lump per instance; analysis uses C=1.0 fF (not C+cc)"
+    via_classes:
+      V1-V2:
+        size_um: 0.021
+        r_ohm: 30.0
+        c_ff: 0.1
+        c_plus_cc_ff: 0.1
+        source: user_measured_lookup
+        per: instance
+      V3-V4:
+        size_um: 0.021
+        r_ohm: 30.0
+        c_ff: 0.1
+        c_plus_cc_ff: 0.1
+        source: user_measured_lookup
+        per: instance
+      V5-V9:
+        size_um: 0.040
+        r_ohm: 9.0
+        c_ff: 0.2
+        c_plus_cc_ff: 0.2
+        source: user_measured_lookup
+        per: instance
+      V10-V11:
+        size_um: 0.324
+        r_ohm: 0.3
+        c_ff: 0.4
+        c_plus_cc_ff: 0.5
+        source: user_measured_lookup
+        per: instance
+    via_layer_map:
+      VIA0:
+        class: V1-V2
+        mapped: true
+        note: "VIA0 not in measured table; thin via like V1 → V1-V2"
+      VIA1: { class: V1-V2 }
+      VIA2: { class: V1-V2 }
+      VIA3: { class: V3-V4 }
+      VIA4: { class: V3-V4 }
+      VIA5: { class: V5-V9 }
+      VIA6: { class: V5-V9 }
+      VIA7: { class: V5-V9 }
+      VIA8: { class: V5-V9 }
+      VIA9: { class: V5-V9 }
+      VIA10: { class: V10-V11 }
+      VIA11: { class: V10-V11 }
+      VIA12:
+        class: V10-V11
+        mapped: true
+        note: "VIA12 not in measured table; map to nearest thick via V10-V11"
+      RV:
+        class: V10-V11
+        mapped: true
+        note: "RV (M13-AP) not in measured via table; map to thick via V10-V11 (research). DRM min_size=2.7 um; RC uses V10-V11 class 0.3 Ohm / 0.4 fF."
+    default_via_class: V1-V2
+
+# ---------------------------------------------------------------------------
+# L2 interconnect analysis (pi-ladder + Elmore) — user-approved model
+# Primary delay estimate for GDS WL analysis. L3 (Palace EM) is future only.
+# ---------------------------------------------------------------------------
+analysis_l2:
+  model: pi_ladder_elmore
+  seg_length_default_um: 0.5   # = WL tap pitch
+  R_drv_ohm: 200.0
+  R_drv_source: placeholder_unverified
+  R_drv_note: "D10 driver series Rout placeholder — NOT SPICE-calibrated; replace after inverter characterization"
+  C_drv_par_ff: 0.0
+  C_drv_par_note: "Optional driver parasitic at node0; default 0"
+  C_pg_ff_per_finger: 0.3
+  C_pg_ff: 0.3
+  C_pg_source: user_rule_0p3fF_per_finger
+  C_pg_note: "C_pg = 0.3 fF × nfinger_pg (user); default PG nfinger=1 -> 0.3 fF; dual-PG tap = 2×0.3 = 0.6 fF"
+  n_pg_default: 2
+  Vdd_V: 0.75
+  Vdd_source: placeholder_unverified
+  Vdd_note: "N5 core Vdd placeholder for energy proxy 0.5*C*Vdd^2 (fJ when C in fF)"
+  via_c_from_ladder: true
+  note_zh: |
+    L2 主模型：按 tap pitch 分段的 pi-ladder + Elmore 延时。
+    仅 R_drv / Vdd 仍为占位，需用户用 SPICE / 实测校准；C_pg 使用用户 finger 规则：0.3 fF × nfinger_pg。
+    L3（Palace 等）仅作抽样校准，本版本不实现。
+  future_l3: |
+    Future L3: sample segments with Palace (or similar EM) to calibrate
+    R'/C' and via lumps; do not replace L2 for full-array sweeps until
+    calibrated. Not implemented in this release.

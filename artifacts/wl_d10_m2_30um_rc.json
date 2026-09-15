@@ -1,0 +1,1694 @@
+{
+  "net": "WL",
+  "metal": "M2",
+  "units": {
+    "r": "Ohm",
+    "c": "fF",
+    "length": "um",
+    "r_per_um": "Ohm/um",
+    "c_per_um": "fF/um"
+  },
+  "length_um": 30.0,
+  "width_um": 0.02,
+  "width_note": "Table is per-length (Ohm/um, fF/um); width is recorded only. Do not divide by width unless using an optional sheet mode.",
+  "n_bitcells": 60,
+  "tap_pitch_um": 0.5,
+  "metal_table": {
+    "r_ohm_per_um": 32.863353450309965,
+    "c_ff_per_um": 0.215,
+    "source": "interpolated_from_user_measured",
+    "parents": [
+      "M1",
+      "M3"
+    ],
+    "mapped_to": null,
+    "note": "R=sqrt(R_M1*R_M3); C=(C_M1+C_M3)/2",
+    "interpolation_note": "M2 interpolated from M1-M3 (R=sqrt, C=avg) source=interpolated_from_user_measured"
+  },
+  "metal_rc": {
+    "r_ohm": 985.900603509299,
+    "c_ff": 6.45,
+    "formula": "per_um * length_um"
+  },
+  "via": {
+    "n_vias": 122,
+    "r_ohm_each": 30.0,
+    "c_ff_each": 0.1,
+    "r_ohm": 3660.0,
+    "c_ff": 12.200000000000001,
+    "c_plus_cc_ff": 12.200000000000001,
+    "count_method": "polygon_count",
+    "count_detail": {
+      "n_vias": 122,
+      "per_layer": {
+        "VIA0": 61,
+        "VIA1": 61
+      },
+      "method": "polygon_count",
+      "layers_counted": [
+        "VIA0",
+        "VIA1"
+      ]
+    },
+    "per_layer": {
+      "VIA0": {
+        "n": 61,
+        "class": "V1-V2",
+        "r_ohm_each": 30.0,
+        "c_ff_each": 0.1,
+        "c_plus_cc_ff_each": 0.1,
+        "r_ohm": 1830.0,
+        "c_ff": 6.1000000000000005,
+        "mapped": true,
+        "source": "user_measured_lookup",
+        "size_um": 0.021,
+        "note": "VIA0 not in measured table; thin via like V1 → V1-V2"
+      },
+      "VIA1": {
+        "n": 61,
+        "class": "V1-V2",
+        "r_ohm_each": 30.0,
+        "c_ff_each": 0.1,
+        "c_plus_cc_ff_each": 0.1,
+        "r_ohm": 1830.0,
+        "c_ff": 6.1000000000000005,
+        "mapped": false,
+        "source": "user_measured_lookup",
+        "size_um": 0.021,
+        "note": null
+      }
+    },
+    "by_class": {
+      "V1-V2": {
+        "n": 122,
+        "r_ohm_each": 30.0,
+        "c_ff_each": 0.1,
+        "c_plus_cc_ff_each": 0.1,
+        "r_ohm": 3660.0,
+        "c_ff": 12.200000000000001,
+        "c_plus_cc_ff": 12.200000000000001,
+        "layers": [
+          "VIA0",
+          "VIA1"
+        ],
+        "source": "user_measured_lookup",
+        "size_um": 0.021
+      }
+    },
+    "table": {
+      "r_ohm_default_use": 30.0,
+      "c_ff": 0.1,
+      "c_plus_cc_ff": 0.1,
+      "default_via_class": "V1-V2",
+      "classes": {
+        "V1-V2": {
+          "size_um": 0.021,
+          "r_ohm": 30.0,
+          "c_ff": 0.1,
+          "c_plus_cc_ff": 0.1,
+          "source": "user_measured_lookup",
+          "per": "instance"
+        },
+        "V3-V4": {
+          "size_um": 0.021,
+          "r_ohm": 30.0,
+          "c_ff": 0.1,
+          "c_plus_cc_ff": 0.1,
+          "source": "user_measured_lookup",
+          "per": "instance"
+        },
+        "V5-V9": {
+          "size_um": 0.04,
+          "r_ohm": 9.0,
+          "c_ff": 0.2,
+          "c_plus_cc_ff": 0.2,
+          "source": "user_measured_lookup",
+          "per": "instance"
+        },
+        "V10-V11": {
+          "size_um": 0.324,
+          "r_ohm": 0.3,
+          "c_ff": 0.4,
+          "c_plus_cc_ff": 0.5,
+          "source": "user_measured_lookup",
+          "per": "instance"
+        }
+      },
+      "layer_map": {
+        "VIA0": {
+          "class": "V1-V2",
+          "mapped": true,
+          "note": "VIA0 not in measured table; thin via like V1 → V1-V2"
+        },
+        "VIA1": {
+          "class": "V1-V2"
+        },
+        "VIA2": {
+          "class": "V1-V2"
+        },
+        "VIA3": {
+          "class": "V3-V4"
+        },
+        "VIA4": {
+          "class": "V3-V4"
+        },
+        "VIA5": {
+          "class": "V5-V9"
+        },
+        "VIA6": {
+          "class": "V5-V9"
+        },
+        "VIA7": {
+          "class": "V5-V9"
+        },
+        "VIA8": {
+          "class": "V5-V9"
+        },
+        "VIA9": {
+          "class": "V5-V9"
+        },
+        "VIA10": {
+          "class": "V10-V11"
+        },
+        "VIA11": {
+          "class": "V10-V11"
+        },
+        "VIA12": {
+          "class": "V10-V11",
+          "mapped": true,
+          "note": "VIA12 not in measured table; map to nearest thick via V10-V11"
+        },
+        "RV": {
+          "class": "V10-V11",
+          "mapped": true,
+          "note": "RV (M13-AP) not in measured via table; map to thick via V10-V11 (research). DRM min_size=2.7 um; RC uses V10-V11 class 0.3 Ohm / 0.4 fF."
+        }
+      },
+      "source": "user_measured_lookup",
+      "note": "Default thin via = V1-V2; pass via_name / use get_via_rc_for_layer for per-layer class lookup. Analysis capacitance uses c_ff (not c_plus_cc_ff)."
+    }
+  },
+  "hb": {
+    "n_hb": 0,
+    "r_ohm_each": 0.165,
+    "c_ff_each": 1.0,
+    "c_plus_cc_ff_each": 1.3,
+    "r_ohm": 0.0,
+    "c_ff": 0.0,
+    "source": "user_measured_lookup",
+    "size_um": 0.324
+  },
+  "totals": {
+    "r_ohm": 4645.900603509299,
+    "c_ff": 18.650000000000002,
+    "r_metal_ohm": 985.900603509299,
+    "c_metal_ff": 6.45,
+    "r_via_ohm": 3660.0,
+    "c_via_ff": 12.200000000000001,
+    "r_hb_ohm": 0.0,
+    "c_hb_ff": 0.0
+  },
+  "ladder": {
+    "n_seg": 60,
+    "seg_length_um": 0.5,
+    "vias_per_tap": 2,
+    "tap_via_layers": [
+      "VIA0",
+      "VIA1"
+    ],
+    "segments": [
+      {
+        "index": 1,
+        "y_um": 0.5,
+        "seg_length_um": 0.5,
+        "r_seg_ohm": 16.431676725154983,
+        "c_seg_ff": 0.1075,
+        "via_lump_at_tap": {
+          "n_vias": 2,
+          "r_ohm": 60.0,
+          "c_ff": 0.2,
+          "c_plus_cc_ff": 0.2,
+          "layers": [
+            "VIA0",
+            "VIA1"
+          ],
+          "by_class": {
+            "V1-V2": {
+              "n": 2,
+              "r_ohm": 60.0,
+              "c_ff": 0.2
+            }
+          }
+        }
+      },
+      {
+        "index": 2,
+        "y_um": 1.0,
+        "seg_length_um": 0.5,
+        "r_seg_ohm": 16.431676725154983,
+        "c_seg_ff": 0.1075,
+        "via_lump_at_tap": {
+          "n_vias": 2,
+          "r_ohm": 60.0,
+          "c_ff": 0.2,
+          "c_plus_cc_ff": 0.2,
+          "layers": [
+            "VIA0",
+            "VIA1"
+          ],
+          "by_class": {
+            "V1-V2": {
+              "n": 2,
+              "r_ohm": 60.0,
+              "c_ff": 0.2
+            }
+          }
+        }
+      },
+      {
+        "index": 3,
+        "y_um": 1.5,
+        "seg_length_um": 0.5,
+        "r_seg_ohm": 16.431676725154983,
+        "c_seg_ff": 0.1075,
+        "via_lump_at_tap": {
+          "n_vias": 2,
+          "r_ohm": 60.0,
+          "c_ff": 0.2,
+          "c_plus_cc_ff": 0.2,
+          "layers": [
+            "VIA0",
+            "VIA1"
+          ],
+          "by_class": {
+            "V1-V2": {
+              "n": 2,
+              "r_ohm": 60.0,
+              "c_ff": 0.2
+            }
+          }
+        }
+      },
+      {
+        "index": 4,
+        "y_um": 2.0,
+        "seg_length_um": 0.5,
+        "r_seg_ohm": 16.431676725154983,
+        "c_seg_ff": 0.1075,
+        "via_lump_at_tap": {
+          "n_vias": 2,
+          "r_ohm": 60.0,
+          "c_ff": 0.2,
+          "c_plus_cc_ff": 0.2,
+          "layers": [
+            "VIA0",
+            "VIA1"
+          ],
+          "by_class": {
+            "V1-V2": {
+              "n": 2,
+              "r_ohm": 60.0,
+              "c_ff": 0.2
+            }
+          }
+        }
+      },
+      {
+        "index": 5,
+        "y_um": 2.5,
+        "seg_length_um": 0.5,
+        "r_seg_ohm": 16.431676725154983,
+        "c_seg_ff": 0.1075,
+        "via_lump_at_tap": {
+          "n_vias": 2,
+          "r_ohm": 60.0,
+          "c_ff": 0.2,
+          "c_plus_cc_ff": 0.2,
+          "layers": [
+            "VIA0",
+            "VIA1"
+          ],
+          "by_class": {
+            "V1-V2": {
+              "n": 2,
+              "r_ohm": 60.0,
+              "c_ff": 0.2
+            }
+          }
+        }
+      },
+      {
+        "index": 6,
+        "y_um": 3.0,
+        "seg_length_um": 0.5,
+        "r_seg_ohm": 16.431676725154983,
+        "c_seg_ff": 0.1075,
+        "via_lump_at_tap": {
+          "n_vias": 2,
+          "r_ohm": 60.0,
+          "c_ff": 0.2,
+          "c_plus_cc_ff": 0.2,
+          "layers": [
+            "VIA0",
+            "VIA1"
+          ],
+          "by_class": {
+            "V1-V2": {
+              "n": 2,
+              "r_ohm": 60.0,
+              "c_ff": 0.2
+            }
+          }
+        }
+      },
+      {
+        "index": 7,
+        "y_um": 3.5,
+        "seg_length_um": 0.5,
+        "r_seg_ohm": 16.431676725154983,
+        "c_seg_ff": 0.1075,
+        "via_lump_at_tap": {
+          "n_vias": 2,
+          "r_ohm": 60.0,
+          "c_ff": 0.2,
+          "c_plus_cc_ff": 0.2,
+          "layers": [
+            "VIA0",
+            "VIA1"
+          ],
+          "by_class": {
+            "V1-V2": {
+              "n": 2,
+              "r_ohm": 60.0,
+              "c_ff": 0.2
+            }
+          }
+        }
+      },
+      {
+        "index": 8,
+        "y_um": 4.0,
+        "seg_length_um": 0.5,
+        "r_seg_ohm": 16.431676725154983,
+        "c_seg_ff": 0.1075,
+        "via_lump_at_tap": {
+          "n_vias": 2,
+          "r_ohm": 60.0,
+          "c_ff": 0.2,
+          "c_plus_cc_ff": 0.2,
+          "layers": [
+            "VIA0",
+            "VIA1"
+          ],
+          "by_class": {
+            "V1-V2": {
+              "n": 2,
+              "r_ohm": 60.0,
+              "c_ff": 0.2
+            }
+          }
+        }
+      },
+      {
+        "index": 9,
+        "y_um": 4.5,
+        "seg_length_um": 0.5,
+        "r_seg_ohm": 16.431676725154983,
+        "c_seg_ff": 0.1075,
+        "via_lump_at_tap": {
+          "n_vias": 2,
+          "r_ohm": 60.0,
+          "c_ff": 0.2,
+          "c_plus_cc_ff": 0.2,
+          "layers": [
+            "VIA0",
+            "VIA1"
+          ],
+          "by_class": {
+            "V1-V2": {
+              "n": 2,
+              "r_ohm": 60.0,
+              "c_ff": 0.2
+            }
+          }
+        }
+      },
+      {
+        "index": 10,
+        "y_um": 5.0,
+        "seg_length_um": 0.5,
+        "r_seg_ohm": 16.431676725154983,
+        "c_seg_ff": 0.1075,
+        "via_lump_at_tap": {
+          "n_vias": 2,
+          "r_ohm": 60.0,
+          "c_ff": 0.2,
+          "c_plus_cc_ff": 0.2,
+          "layers": [
+            "VIA0",
+            "VIA1"
+          ],
+          "by_class": {
+            "V1-V2": {
+              "n": 2,
+              "r_ohm": 60.0,
+              "c_ff": 0.2
+            }
+          }
+        }
+      },
+      {
+        "index": 11,
+        "y_um": 5.5,
+        "seg_length_um": 0.5,
+        "r_seg_ohm": 16.431676725154983,
+        "c_seg_ff": 0.1075,
+        "via_lump_at_tap": {
+          "n_vias": 2,
+          "r_ohm": 60.0,
+          "c_ff": 0.2,
+          "c_plus_cc_ff": 0.2,
+          "layers": [
+            "VIA0",
+            "VIA1"
+          ],
+          "by_class": {
+            "V1-V2": {
+              "n": 2,
+              "r_ohm": 60.0,
+              "c_ff": 0.2
+            }
+          }
+        }
+      },
+      {
+        "index": 12,
+        "y_um": 6.0,
+        "seg_length_um": 0.5,
+        "r_seg_ohm": 16.431676725154983,
+        "c_seg_ff": 0.1075,
+        "via_lump_at_tap": {
+          "n_vias": 2,
+          "r_ohm": 60.0,
+          "c_ff": 0.2,
+          "c_plus_cc_ff": 0.2,
+          "layers": [
+            "VIA0",
+            "VIA1"
+          ],
+          "by_class": {
+            "V1-V2": {
+              "n": 2,
+              "r_ohm": 60.0,
+              "c_ff": 0.2
+            }
+          }
+        }
+      },
+      {
+        "index": 13,
+        "y_um": 6.5,
+        "seg_length_um": 0.5,
+        "r_seg_ohm": 16.431676725154983,
+        "c_seg_ff": 0.1075,
+        "via_lump_at_tap": {
+          "n_vias": 2,
+          "r_ohm": 60.0,
+          "c_ff": 0.2,
+          "c_plus_cc_ff": 0.2,
+          "layers": [
+            "VIA0",
+            "VIA1"
+          ],
+          "by_class": {
+            "V1-V2": {
+              "n": 2,
+              "r_ohm": 60.0,
+              "c_ff": 0.2
+            }
+          }
+        }
+      },
+      {
+        "index": 14,
+        "y_um": 7.0,
+        "seg_length_um": 0.5,
+        "r_seg_ohm": 16.431676725154983,
+        "c_seg_ff": 0.1075,
+        "via_lump_at_tap": {
+          "n_vias": 2,
+          "r_ohm": 60.0,
+          "c_ff": 0.2,
+          "c_plus_cc_ff": 0.2,
+          "layers": [
+            "VIA0",
+            "VIA1"
+          ],
+          "by_class": {
+            "V1-V2": {
+              "n": 2,
+              "r_ohm": 60.0,
+              "c_ff": 0.2
+            }
+          }
+        }
+      },
+      {
+        "index": 15,
+        "y_um": 7.5,
+        "seg_length_um": 0.5,
+        "r_seg_ohm": 16.431676725154983,
+        "c_seg_ff": 0.1075,
+        "via_lump_at_tap": {
+          "n_vias": 2,
+          "r_ohm": 60.0,
+          "c_ff": 0.2,
+          "c_plus_cc_ff": 0.2,
+          "layers": [
+            "VIA0",
+            "VIA1"
+          ],
+          "by_class": {
+            "V1-V2": {
+              "n": 2,
+              "r_ohm": 60.0,
+              "c_ff": 0.2
+            }
+          }
+        }
+      },
+      {
+        "index": 16,
+        "y_um": 8.0,
+        "seg_length_um": 0.5,
+        "r_seg_ohm": 16.431676725154983,
+        "c_seg_ff": 0.1075,
+        "via_lump_at_tap": {
+          "n_vias": 2,
+          "r_ohm": 60.0,
+          "c_ff": 0.2,
+          "c_plus_cc_ff": 0.2,
+          "layers": [
+            "VIA0",
+            "VIA1"
+          ],
+          "by_class": {
+            "V1-V2": {
+              "n": 2,
+              "r_ohm": 60.0,
+              "c_ff": 0.2
+            }
+          }
+        }
+      },
+      {
+        "index": 17,
+        "y_um": 8.5,
+        "seg_length_um": 0.5,
+        "r_seg_ohm": 16.431676725154983,
+        "c_seg_ff": 0.1075,
+        "via_lump_at_tap": {
+          "n_vias": 2,
+          "r_ohm": 60.0,
+          "c_ff": 0.2,
+          "c_plus_cc_ff": 0.2,
+          "layers": [
+            "VIA0",
+            "VIA1"
+          ],
+          "by_class": {
+            "V1-V2": {
+              "n": 2,
+              "r_ohm": 60.0,
+              "c_ff": 0.2
+            }
+          }
+        }
+      },
+      {
+        "index": 18,
+        "y_um": 9.0,
+        "seg_length_um": 0.5,
+        "r_seg_ohm": 16.431676725154983,
+        "c_seg_ff": 0.1075,
+        "via_lump_at_tap": {
+          "n_vias": 2,
+          "r_ohm": 60.0,
+          "c_ff": 0.2,
+          "c_plus_cc_ff": 0.2,
+          "layers": [
+            "VIA0",
+            "VIA1"
+          ],
+          "by_class": {
+            "V1-V2": {
+              "n": 2,
+              "r_ohm": 60.0,
+              "c_ff": 0.2
+            }
+          }
+        }
+      },
+      {
+        "index": 19,
+        "y_um": 9.5,
+        "seg_length_um": 0.5,
+        "r_seg_ohm": 16.431676725154983,
+        "c_seg_ff": 0.1075,
+        "via_lump_at_tap": {
+          "n_vias": 2,
+          "r_ohm": 60.0,
+          "c_ff": 0.2,
+          "c_plus_cc_ff": 0.2,
+          "layers": [
+            "VIA0",
+            "VIA1"
+          ],
+          "by_class": {
+            "V1-V2": {
+              "n": 2,
+              "r_ohm": 60.0,
+              "c_ff": 0.2
+            }
+          }
+        }
+      },
+      {
+        "index": 20,
+        "y_um": 10.0,
+        "seg_length_um": 0.5,
+        "r_seg_ohm": 16.431676725154983,
+        "c_seg_ff": 0.1075,
+        "via_lump_at_tap": {
+          "n_vias": 2,
+          "r_ohm": 60.0,
+          "c_ff": 0.2,
+          "c_plus_cc_ff": 0.2,
+          "layers": [
+            "VIA0",
+            "VIA1"
+          ],
+          "by_class": {
+            "V1-V2": {
+              "n": 2,
+              "r_ohm": 60.0,
+              "c_ff": 0.2
+            }
+          }
+        }
+      },
+      {
+        "index": 21,
+        "y_um": 10.5,
+        "seg_length_um": 0.5,
+        "r_seg_ohm": 16.431676725154983,
+        "c_seg_ff": 0.1075,
+        "via_lump_at_tap": {
+          "n_vias": 2,
+          "r_ohm": 60.0,
+          "c_ff": 0.2,
+          "c_plus_cc_ff": 0.2,
+          "layers": [
+            "VIA0",
+            "VIA1"
+          ],
+          "by_class": {
+            "V1-V2": {
+              "n": 2,
+              "r_ohm": 60.0,
+              "c_ff": 0.2
+            }
+          }
+        }
+      },
+      {
+        "index": 22,
+        "y_um": 11.0,
+        "seg_length_um": 0.5,
+        "r_seg_ohm": 16.431676725154983,
+        "c_seg_ff": 0.1075,
+        "via_lump_at_tap": {
+          "n_vias": 2,
+          "r_ohm": 60.0,
+          "c_ff": 0.2,
+          "c_plus_cc_ff": 0.2,
+          "layers": [
+            "VIA0",
+            "VIA1"
+          ],
+          "by_class": {
+            "V1-V2": {
+              "n": 2,
+              "r_ohm": 60.0,
+              "c_ff": 0.2
+            }
+          }
+        }
+      },
+      {
+        "index": 23,
+        "y_um": 11.5,
+        "seg_length_um": 0.5,
+        "r_seg_ohm": 16.431676725154983,
+        "c_seg_ff": 0.1075,
+        "via_lump_at_tap": {
+          "n_vias": 2,
+          "r_ohm": 60.0,
+          "c_ff": 0.2,
+          "c_plus_cc_ff": 0.2,
+          "layers": [
+            "VIA0",
+            "VIA1"
+          ],
+          "by_class": {
+            "V1-V2": {
+              "n": 2,
+              "r_ohm": 60.0,
+              "c_ff": 0.2
+            }
+          }
+        }
+      },
+      {
+        "index": 24,
+        "y_um": 12.0,
+        "seg_length_um": 0.5,
+        "r_seg_ohm": 16.431676725154983,
+        "c_seg_ff": 0.1075,
+        "via_lump_at_tap": {
+          "n_vias": 2,
+          "r_ohm": 60.0,
+          "c_ff": 0.2,
+          "c_plus_cc_ff": 0.2,
+          "layers": [
+            "VIA0",
+            "VIA1"
+          ],
+          "by_class": {
+            "V1-V2": {
+              "n": 2,
+              "r_ohm": 60.0,
+              "c_ff": 0.2
+            }
+          }
+        }
+      },
+      {
+        "index": 25,
+        "y_um": 12.5,
+        "seg_length_um": 0.5,
+        "r_seg_ohm": 16.431676725154983,
+        "c_seg_ff": 0.1075,
+        "via_lump_at_tap": {
+          "n_vias": 2,
+          "r_ohm": 60.0,
+          "c_ff": 0.2,
+          "c_plus_cc_ff": 0.2,
+          "layers": [
+            "VIA0",
+            "VIA1"
+          ],
+          "by_class": {
+            "V1-V2": {
+              "n": 2,
+              "r_ohm": 60.0,
+              "c_ff": 0.2
+            }
+          }
+        }
+      },
+      {
+        "index": 26,
+        "y_um": 13.0,
+        "seg_length_um": 0.5,
+        "r_seg_ohm": 16.431676725154983,
+        "c_seg_ff": 0.1075,
+        "via_lump_at_tap": {
+          "n_vias": 2,
+          "r_ohm": 60.0,
+          "c_ff": 0.2,
+          "c_plus_cc_ff": 0.2,
+          "layers": [
+            "VIA0",
+            "VIA1"
+          ],
+          "by_class": {
+            "V1-V2": {
+              "n": 2,
+              "r_ohm": 60.0,
+              "c_ff": 0.2
+            }
+          }
+        }
+      },
+      {
+        "index": 27,
+        "y_um": 13.5,
+        "seg_length_um": 0.5,
+        "r_seg_ohm": 16.431676725154983,
+        "c_seg_ff": 0.1075,
+        "via_lump_at_tap": {
+          "n_vias": 2,
+          "r_ohm": 60.0,
+          "c_ff": 0.2,
+          "c_plus_cc_ff": 0.2,
+          "layers": [
+            "VIA0",
+            "VIA1"
+          ],
+          "by_class": {
+            "V1-V2": {
+              "n": 2,
+              "r_ohm": 60.0,
+              "c_ff": 0.2
+            }
+          }
+        }
+      },
+      {
+        "index": 28,
+        "y_um": 14.0,
+        "seg_length_um": 0.5,
+        "r_seg_ohm": 16.431676725154983,
+        "c_seg_ff": 0.1075,
+        "via_lump_at_tap": {
+          "n_vias": 2,
+          "r_ohm": 60.0,
+          "c_ff": 0.2,
+          "c_plus_cc_ff": 0.2,
+          "layers": [
+            "VIA0",
+            "VIA1"
+          ],
+          "by_class": {
+            "V1-V2": {
+              "n": 2,
+              "r_ohm": 60.0,
+              "c_ff": 0.2
+            }
+          }
+        }
+      },
+      {
+        "index": 29,
+        "y_um": 14.5,
+        "seg_length_um": 0.5,
+        "r_seg_ohm": 16.431676725154983,
+        "c_seg_ff": 0.1075,
+        "via_lump_at_tap": {
+          "n_vias": 2,
+          "r_ohm": 60.0,
+          "c_ff": 0.2,
+          "c_plus_cc_ff": 0.2,
+          "layers": [
+            "VIA0",
+            "VIA1"
+          ],
+          "by_class": {
+            "V1-V2": {
+              "n": 2,
+              "r_ohm": 60.0,
+              "c_ff": 0.2
+            }
+          }
+        }
+      },
+      {
+        "index": 30,
+        "y_um": 15.0,
+        "seg_length_um": 0.5,
+        "r_seg_ohm": 16.431676725154983,
+        "c_seg_ff": 0.1075,
+        "via_lump_at_tap": {
+          "n_vias": 2,
+          "r_ohm": 60.0,
+          "c_ff": 0.2,
+          "c_plus_cc_ff": 0.2,
+          "layers": [
+            "VIA0",
+            "VIA1"
+          ],
+          "by_class": {
+            "V1-V2": {
+              "n": 2,
+              "r_ohm": 60.0,
+              "c_ff": 0.2
+            }
+          }
+        }
+      },
+      {
+        "index": 31,
+        "y_um": 15.5,
+        "seg_length_um": 0.5,
+        "r_seg_ohm": 16.431676725154983,
+        "c_seg_ff": 0.1075,
+        "via_lump_at_tap": {
+          "n_vias": 2,
+          "r_ohm": 60.0,
+          "c_ff": 0.2,
+          "c_plus_cc_ff": 0.2,
+          "layers": [
+            "VIA0",
+            "VIA1"
+          ],
+          "by_class": {
+            "V1-V2": {
+              "n": 2,
+              "r_ohm": 60.0,
+              "c_ff": 0.2
+            }
+          }
+        }
+      },
+      {
+        "index": 32,
+        "y_um": 16.0,
+        "seg_length_um": 0.5,
+        "r_seg_ohm": 16.431676725154983,
+        "c_seg_ff": 0.1075,
+        "via_lump_at_tap": {
+          "n_vias": 2,
+          "r_ohm": 60.0,
+          "c_ff": 0.2,
+          "c_plus_cc_ff": 0.2,
+          "layers": [
+            "VIA0",
+            "VIA1"
+          ],
+          "by_class": {
+            "V1-V2": {
+              "n": 2,
+              "r_ohm": 60.0,
+              "c_ff": 0.2
+            }
+          }
+        }
+      },
+      {
+        "index": 33,
+        "y_um": 16.5,
+        "seg_length_um": 0.5,
+        "r_seg_ohm": 16.431676725154983,
+        "c_seg_ff": 0.1075,
+        "via_lump_at_tap": {
+          "n_vias": 2,
+          "r_ohm": 60.0,
+          "c_ff": 0.2,
+          "c_plus_cc_ff": 0.2,
+          "layers": [
+            "VIA0",
+            "VIA1"
+          ],
+          "by_class": {
+            "V1-V2": {
+              "n": 2,
+              "r_ohm": 60.0,
+              "c_ff": 0.2
+            }
+          }
+        }
+      },
+      {
+        "index": 34,
+        "y_um": 17.0,
+        "seg_length_um": 0.5,
+        "r_seg_ohm": 16.431676725154983,
+        "c_seg_ff": 0.1075,
+        "via_lump_at_tap": {
+          "n_vias": 2,
+          "r_ohm": 60.0,
+          "c_ff": 0.2,
+          "c_plus_cc_ff": 0.2,
+          "layers": [
+            "VIA0",
+            "VIA1"
+          ],
+          "by_class": {
+            "V1-V2": {
+              "n": 2,
+              "r_ohm": 60.0,
+              "c_ff": 0.2
+            }
+          }
+        }
+      },
+      {
+        "index": 35,
+        "y_um": 17.5,
+        "seg_length_um": 0.5,
+        "r_seg_ohm": 16.431676725154983,
+        "c_seg_ff": 0.1075,
+        "via_lump_at_tap": {
+          "n_vias": 2,
+          "r_ohm": 60.0,
+          "c_ff": 0.2,
+          "c_plus_cc_ff": 0.2,
+          "layers": [
+            "VIA0",
+            "VIA1"
+          ],
+          "by_class": {
+            "V1-V2": {
+              "n": 2,
+              "r_ohm": 60.0,
+              "c_ff": 0.2
+            }
+          }
+        }
+      },
+      {
+        "index": 36,
+        "y_um": 18.0,
+        "seg_length_um": 0.5,
+        "r_seg_ohm": 16.431676725154983,
+        "c_seg_ff": 0.1075,
+        "via_lump_at_tap": {
+          "n_vias": 2,
+          "r_ohm": 60.0,
+          "c_ff": 0.2,
+          "c_plus_cc_ff": 0.2,
+          "layers": [
+            "VIA0",
+            "VIA1"
+          ],
+          "by_class": {
+            "V1-V2": {
+              "n": 2,
+              "r_ohm": 60.0,
+              "c_ff": 0.2
+            }
+          }
+        }
+      },
+      {
+        "index": 37,
+        "y_um": 18.5,
+        "seg_length_um": 0.5,
+        "r_seg_ohm": 16.431676725154983,
+        "c_seg_ff": 0.1075,
+        "via_lump_at_tap": {
+          "n_vias": 2,
+          "r_ohm": 60.0,
+          "c_ff": 0.2,
+          "c_plus_cc_ff": 0.2,
+          "layers": [
+            "VIA0",
+            "VIA1"
+          ],
+          "by_class": {
+            "V1-V2": {
+              "n": 2,
+              "r_ohm": 60.0,
+              "c_ff": 0.2
+            }
+          }
+        }
+      },
+      {
+        "index": 38,
+        "y_um": 19.0,
+        "seg_length_um": 0.5,
+        "r_seg_ohm": 16.431676725154983,
+        "c_seg_ff": 0.1075,
+        "via_lump_at_tap": {
+          "n_vias": 2,
+          "r_ohm": 60.0,
+          "c_ff": 0.2,
+          "c_plus_cc_ff": 0.2,
+          "layers": [
+            "VIA0",
+            "VIA1"
+          ],
+          "by_class": {
+            "V1-V2": {
+              "n": 2,
+              "r_ohm": 60.0,
+              "c_ff": 0.2
+            }
+          }
+        }
+      },
+      {
+        "index": 39,
+        "y_um": 19.5,
+        "seg_length_um": 0.5,
+        "r_seg_ohm": 16.431676725154983,
+        "c_seg_ff": 0.1075,
+        "via_lump_at_tap": {
+          "n_vias": 2,
+          "r_ohm": 60.0,
+          "c_ff": 0.2,
+          "c_plus_cc_ff": 0.2,
+          "layers": [
+            "VIA0",
+            "VIA1"
+          ],
+          "by_class": {
+            "V1-V2": {
+              "n": 2,
+              "r_ohm": 60.0,
+              "c_ff": 0.2
+            }
+          }
+        }
+      },
+      {
+        "index": 40,
+        "y_um": 20.0,
+        "seg_length_um": 0.5,
+        "r_seg_ohm": 16.431676725154983,
+        "c_seg_ff": 0.1075,
+        "via_lump_at_tap": {
+          "n_vias": 2,
+          "r_ohm": 60.0,
+          "c_ff": 0.2,
+          "c_plus_cc_ff": 0.2,
+          "layers": [
+            "VIA0",
+            "VIA1"
+          ],
+          "by_class": {
+            "V1-V2": {
+              "n": 2,
+              "r_ohm": 60.0,
+              "c_ff": 0.2
+            }
+          }
+        }
+      },
+      {
+        "index": 41,
+        "y_um": 20.5,
+        "seg_length_um": 0.5,
+        "r_seg_ohm": 16.431676725154983,
+        "c_seg_ff": 0.1075,
+        "via_lump_at_tap": {
+          "n_vias": 2,
+          "r_ohm": 60.0,
+          "c_ff": 0.2,
+          "c_plus_cc_ff": 0.2,
+          "layers": [
+            "VIA0",
+            "VIA1"
+          ],
+          "by_class": {
+            "V1-V2": {
+              "n": 2,
+              "r_ohm": 60.0,
+              "c_ff": 0.2
+            }
+          }
+        }
+      },
+      {
+        "index": 42,
+        "y_um": 21.0,
+        "seg_length_um": 0.5,
+        "r_seg_ohm": 16.431676725154983,
+        "c_seg_ff": 0.1075,
+        "via_lump_at_tap": {
+          "n_vias": 2,
+          "r_ohm": 60.0,
+          "c_ff": 0.2,
+          "c_plus_cc_ff": 0.2,
+          "layers": [
+            "VIA0",
+            "VIA1"
+          ],
+          "by_class": {
+            "V1-V2": {
+              "n": 2,
+              "r_ohm": 60.0,
+              "c_ff": 0.2
+            }
+          }
+        }
+      },
+      {
+        "index": 43,
+        "y_um": 21.5,
+        "seg_length_um": 0.5,
+        "r_seg_ohm": 16.431676725154983,
+        "c_seg_ff": 0.1075,
+        "via_lump_at_tap": {
+          "n_vias": 2,
+          "r_ohm": 60.0,
+          "c_ff": 0.2,
+          "c_plus_cc_ff": 0.2,
+          "layers": [
+            "VIA0",
+            "VIA1"
+          ],
+          "by_class": {
+            "V1-V2": {
+              "n": 2,
+              "r_ohm": 60.0,
+              "c_ff": 0.2
+            }
+          }
+        }
+      },
+      {
+        "index": 44,
+        "y_um": 22.0,
+        "seg_length_um": 0.5,
+        "r_seg_ohm": 16.431676725154983,
+        "c_seg_ff": 0.1075,
+        "via_lump_at_tap": {
+          "n_vias": 2,
+          "r_ohm": 60.0,
+          "c_ff": 0.2,
+          "c_plus_cc_ff": 0.2,
+          "layers": [
+            "VIA0",
+            "VIA1"
+          ],
+          "by_class": {
+            "V1-V2": {
+              "n": 2,
+              "r_ohm": 60.0,
+              "c_ff": 0.2
+            }
+          }
+        }
+      },
+      {
+        "index": 45,
+        "y_um": 22.5,
+        "seg_length_um": 0.5,
+        "r_seg_ohm": 16.431676725154983,
+        "c_seg_ff": 0.1075,
+        "via_lump_at_tap": {
+          "n_vias": 2,
+          "r_ohm": 60.0,
+          "c_ff": 0.2,
+          "c_plus_cc_ff": 0.2,
+          "layers": [
+            "VIA0",
+            "VIA1"
+          ],
+          "by_class": {
+            "V1-V2": {
+              "n": 2,
+              "r_ohm": 60.0,
+              "c_ff": 0.2
+            }
+          }
+        }
+      },
+      {
+        "index": 46,
+        "y_um": 23.0,
+        "seg_length_um": 0.5,
+        "r_seg_ohm": 16.431676725154983,
+        "c_seg_ff": 0.1075,
+        "via_lump_at_tap": {
+          "n_vias": 2,
+          "r_ohm": 60.0,
+          "c_ff": 0.2,
+          "c_plus_cc_ff": 0.2,
+          "layers": [
+            "VIA0",
+            "VIA1"
+          ],
+          "by_class": {
+            "V1-V2": {
+              "n": 2,
+              "r_ohm": 60.0,
+              "c_ff": 0.2
+            }
+          }
+        }
+      },
+      {
+        "index": 47,
+        "y_um": 23.5,
+        "seg_length_um": 0.5,
+        "r_seg_ohm": 16.431676725154983,
+        "c_seg_ff": 0.1075,
+        "via_lump_at_tap": {
+          "n_vias": 2,
+          "r_ohm": 60.0,
+          "c_ff": 0.2,
+          "c_plus_cc_ff": 0.2,
+          "layers": [
+            "VIA0",
+            "VIA1"
+          ],
+          "by_class": {
+            "V1-V2": {
+              "n": 2,
+              "r_ohm": 60.0,
+              "c_ff": 0.2
+            }
+          }
+        }
+      },
+      {
+        "index": 48,
+        "y_um": 24.0,
+        "seg_length_um": 0.5,
+        "r_seg_ohm": 16.431676725154983,
+        "c_seg_ff": 0.1075,
+        "via_lump_at_tap": {
+          "n_vias": 2,
+          "r_ohm": 60.0,
+          "c_ff": 0.2,
+          "c_plus_cc_ff": 0.2,
+          "layers": [
+            "VIA0",
+            "VIA1"
+          ],
+          "by_class": {
+            "V1-V2": {
+              "n": 2,
+              "r_ohm": 60.0,
+              "c_ff": 0.2
+            }
+          }
+        }
+      },
+      {
+        "index": 49,
+        "y_um": 24.5,
+        "seg_length_um": 0.5,
+        "r_seg_ohm": 16.431676725154983,
+        "c_seg_ff": 0.1075,
+        "via_lump_at_tap": {
+          "n_vias": 2,
+          "r_ohm": 60.0,
+          "c_ff": 0.2,
+          "c_plus_cc_ff": 0.2,
+          "layers": [
+            "VIA0",
+            "VIA1"
+          ],
+          "by_class": {
+            "V1-V2": {
+              "n": 2,
+              "r_ohm": 60.0,
+              "c_ff": 0.2
+            }
+          }
+        }
+      },
+      {
+        "index": 50,
+        "y_um": 25.0,
+        "seg_length_um": 0.5,
+        "r_seg_ohm": 16.431676725154983,
+        "c_seg_ff": 0.1075,
+        "via_lump_at_tap": {
+          "n_vias": 2,
+          "r_ohm": 60.0,
+          "c_ff": 0.2,
+          "c_plus_cc_ff": 0.2,
+          "layers": [
+            "VIA0",
+            "VIA1"
+          ],
+          "by_class": {
+            "V1-V2": {
+              "n": 2,
+              "r_ohm": 60.0,
+              "c_ff": 0.2
+            }
+          }
+        }
+      },
+      {
+        "index": 51,
+        "y_um": 25.5,
+        "seg_length_um": 0.5,
+        "r_seg_ohm": 16.431676725154983,
+        "c_seg_ff": 0.1075,
+        "via_lump_at_tap": {
+          "n_vias": 2,
+          "r_ohm": 60.0,
+          "c_ff": 0.2,
+          "c_plus_cc_ff": 0.2,
+          "layers": [
+            "VIA0",
+            "VIA1"
+          ],
+          "by_class": {
+            "V1-V2": {
+              "n": 2,
+              "r_ohm": 60.0,
+              "c_ff": 0.2
+            }
+          }
+        }
+      },
+      {
+        "index": 52,
+        "y_um": 26.0,
+        "seg_length_um": 0.5,
+        "r_seg_ohm": 16.431676725154983,
+        "c_seg_ff": 0.1075,
+        "via_lump_at_tap": {
+          "n_vias": 2,
+          "r_ohm": 60.0,
+          "c_ff": 0.2,
+          "c_plus_cc_ff": 0.2,
+          "layers": [
+            "VIA0",
+            "VIA1"
+          ],
+          "by_class": {
+            "V1-V2": {
+              "n": 2,
+              "r_ohm": 60.0,
+              "c_ff": 0.2
+            }
+          }
+        }
+      },
+      {
+        "index": 53,
+        "y_um": 26.5,
+        "seg_length_um": 0.5,
+        "r_seg_ohm": 16.431676725154983,
+        "c_seg_ff": 0.1075,
+        "via_lump_at_tap": {
+          "n_vias": 2,
+          "r_ohm": 60.0,
+          "c_ff": 0.2,
+          "c_plus_cc_ff": 0.2,
+          "layers": [
+            "VIA0",
+            "VIA1"
+          ],
+          "by_class": {
+            "V1-V2": {
+              "n": 2,
+              "r_ohm": 60.0,
+              "c_ff": 0.2
+            }
+          }
+        }
+      },
+      {
+        "index": 54,
+        "y_um": 27.0,
+        "seg_length_um": 0.5,
+        "r_seg_ohm": 16.431676725154983,
+        "c_seg_ff": 0.1075,
+        "via_lump_at_tap": {
+          "n_vias": 2,
+          "r_ohm": 60.0,
+          "c_ff": 0.2,
+          "c_plus_cc_ff": 0.2,
+          "layers": [
+            "VIA0",
+            "VIA1"
+          ],
+          "by_class": {
+            "V1-V2": {
+              "n": 2,
+              "r_ohm": 60.0,
+              "c_ff": 0.2
+            }
+          }
+        }
+      },
+      {
+        "index": 55,
+        "y_um": 27.5,
+        "seg_length_um": 0.5,
+        "r_seg_ohm": 16.431676725154983,
+        "c_seg_ff": 0.1075,
+        "via_lump_at_tap": {
+          "n_vias": 2,
+          "r_ohm": 60.0,
+          "c_ff": 0.2,
+          "c_plus_cc_ff": 0.2,
+          "layers": [
+            "VIA0",
+            "VIA1"
+          ],
+          "by_class": {
+            "V1-V2": {
+              "n": 2,
+              "r_ohm": 60.0,
+              "c_ff": 0.2
+            }
+          }
+        }
+      },
+      {
+        "index": 56,
+        "y_um": 28.0,
+        "seg_length_um": 0.5,
+        "r_seg_ohm": 16.431676725154983,
+        "c_seg_ff": 0.1075,
+        "via_lump_at_tap": {
+          "n_vias": 2,
+          "r_ohm": 60.0,
+          "c_ff": 0.2,
+          "c_plus_cc_ff": 0.2,
+          "layers": [
+            "VIA0",
+            "VIA1"
+          ],
+          "by_class": {
+            "V1-V2": {
+              "n": 2,
+              "r_ohm": 60.0,
+              "c_ff": 0.2
+            }
+          }
+        }
+      },
+      {
+        "index": 57,
+        "y_um": 28.5,
+        "seg_length_um": 0.5,
+        "r_seg_ohm": 16.431676725154983,
+        "c_seg_ff": 0.1075,
+        "via_lump_at_tap": {
+          "n_vias": 2,
+          "r_ohm": 60.0,
+          "c_ff": 0.2,
+          "c_plus_cc_ff": 0.2,
+          "layers": [
+            "VIA0",
+            "VIA1"
+          ],
+          "by_class": {
+            "V1-V2": {
+              "n": 2,
+              "r_ohm": 60.0,
+              "c_ff": 0.2
+            }
+          }
+        }
+      },
+      {
+        "index": 58,
+        "y_um": 29.0,
+        "seg_length_um": 0.5,
+        "r_seg_ohm": 16.431676725154983,
+        "c_seg_ff": 0.1075,
+        "via_lump_at_tap": {
+          "n_vias": 2,
+          "r_ohm": 60.0,
+          "c_ff": 0.2,
+          "c_plus_cc_ff": 0.2,
+          "layers": [
+            "VIA0",
+            "VIA1"
+          ],
+          "by_class": {
+            "V1-V2": {
+              "n": 2,
+              "r_ohm": 60.0,
+              "c_ff": 0.2
+            }
+          }
+        }
+      },
+      {
+        "index": 59,
+        "y_um": 29.5,
+        "seg_length_um": 0.5,
+        "r_seg_ohm": 16.431676725154983,
+        "c_seg_ff": 0.1075,
+        "via_lump_at_tap": {
+          "n_vias": 2,
+          "r_ohm": 60.0,
+          "c_ff": 0.2,
+          "c_plus_cc_ff": 0.2,
+          "layers": [
+            "VIA0",
+            "VIA1"
+          ],
+          "by_class": {
+            "V1-V2": {
+              "n": 2,
+              "r_ohm": 60.0,
+              "c_ff": 0.2
+            }
+          }
+        }
+      },
+      {
+        "index": 60,
+        "y_um": 30.0,
+        "seg_length_um": 0.5,
+        "r_seg_ohm": 16.431676725154983,
+        "c_seg_ff": 0.1075,
+        "via_lump_at_tap": {
+          "n_vias": 2,
+          "r_ohm": 60.0,
+          "c_ff": 0.2,
+          "c_plus_cc_ff": 0.2,
+          "layers": [
+            "VIA0",
+            "VIA1"
+          ],
+          "by_class": {
+            "V1-V2": {
+              "n": 2,
+              "r_ohm": 60.0,
+              "c_ff": 0.2
+            }
+          }
+        }
+      }
+    ],
+    "note": "Distributed metal segments between taps with via lump at each tap (VIA0+VIA1 class V1-V2); for SPICE ladder later. Driver via stack is included in totals n_vias."
+  },
+  "interpolation_notes": {
+    "rule_r": "log-average: R = sqrt(R_lo * R_hi) between nearest tabulated metal indices",
+    "rule_c": "linear-average: C = (C_lo + C_hi) / 2",
+    "m0": "extrapolated / mapped_to_M1 (no denser tabulated neighbor below M1)",
+    "m12_m13": "mapped_to_M11 (measured table ends at M11; nearest tabulated above)",
+    "ap": "null — skip unless a tabulated neighbor exists",
+    "measured_source": "user_measured_lookup",
+    "interpolated_source": "interpolated_from_user_measured",
+    "via_default": "default thin via class V1-V2: R=30 Ohm, C=0.1 fF per instance (analysis uses C not C+cc)",
+    "via_classes": "V1-V2 / V3-V4 / V5-V9 / V10-V11 measured; VIA0→V1-V2 mapped; VIA12→V10-V11 mapped",
+    "capacitance_default": "use C (c_ff) for analysis; c_plus_cc_ff stored for reference"
+  },
+  "sources": {
+    "table": "src/gf_layout_flow/tech/n5_1p13m.yaml#interconnect_rc",
+    "metal": "interpolated_from_user_measured",
+    "via": "user_measured_lookup",
+    "hb": "user_measured_lookup",
+    "via_count": "polygon_count"
+  },
+  "component_info": {
+    "driver_strength": "D10",
+    "wl_length_um": 30,
+    "m2_width_um": 0.02,
+    "n_bitcells": 60,
+    "tap_pitch_um": 0.5,
+    "net_name": "WL",
+    "wl_direction": "Y",
+    "baseline_for_hb": true,
+    "pg_nfinger": 1
+  },
+  "notes": "Analytical RC from user measured lookup table. Metal uses per-um * length (not Rsheet*L/W). Via/HB are lumped per instance by via class; analysis capacitance uses C (not C+cc). Research sketch — not a foundry parasitic extraction."
+}

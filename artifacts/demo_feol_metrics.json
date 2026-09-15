@@ -1,0 +1,134 @@
+{
+  "component_name": "Unnamed_18",
+  "units": "um",
+  "layers_used": [
+    "MD",
+    "NP",
+    "NW",
+    "OD",
+    "PO",
+    "PP",
+    "VD",
+    "VG"
+  ],
+  "per_layer": {
+    "MD": {
+      "area_um2": 0.00272,
+      "wire_length_um": 0.136,
+      "mean_width_um": 0.02,
+      "polygon_count": 4,
+      "is_metal": false
+    },
+    "NP": {
+      "area_um2": 0.005848,
+      "wire_length_um": 0.086,
+      "mean_width_um": 0.068,
+      "polygon_count": 1,
+      "is_metal": false
+    },
+    "NW": {
+      "area_um2": 0.024568,
+      "wire_length_um": 0.166,
+      "mean_width_um": 0.148,
+      "polygon_count": 1,
+      "is_metal": false
+    },
+    "OD": {
+      "area_um2": 0.011696,
+      "wire_length_um": 0.172,
+      "mean_width_um": 0.068,
+      "polygon_count": 2,
+      "is_metal": false
+    },
+    "PO": {
+      "area_um2": 0.001056,
+      "wire_length_um": 0.176,
+      "mean_width_um": 0.006,
+      "polygon_count": 2,
+      "is_metal": false
+    },
+    "PP": {
+      "area_um2": 0.005848,
+      "wire_length_um": 0.086,
+      "mean_width_um": 0.068,
+      "polygon_count": 1,
+      "is_metal": false
+    },
+    "VD": {
+      "area_um2": 0.000784,
+      "wire_length_um": 0.056,
+      "mean_width_um": 0.014,
+      "polygon_count": 4,
+      "is_metal": false
+    },
+    "VG": {
+      "area_um2": 0.000288,
+      "wire_length_um": 0.024,
+      "mean_width_um": 0.012,
+      "polygon_count": 2,
+      "is_metal": false
+    }
+  },
+  "totals": {
+    "metal_area_um2": 0,
+    "metal_wire_length_um": 0,
+    "total_area_um2": 0.052808
+  },
+  "hybrid_bonding": {
+    "pad_count": 0,
+    "pad_area_um2": 0.0,
+    "via_area_um2": 0.0,
+    "pitch_um": null,
+    "pad_size_um": null,
+    "interface_area_um2": 0.0
+  },
+  "layer_thickness_um": {
+    "NW": 0.2,
+    "DNW": 0.4,
+    "OD": 0.05,
+    "OD2": 0.07,
+    "PO": 0.04,
+    "MD": 0.03,
+    "VG": 0.035,
+    "VD": 0.035,
+    "M0": 0.036,
+    "VIA0": 0.04,
+    "M1": 0.043,
+    "VIA1": 0.045,
+    "M2": 0.045,
+    "VIA2": 0.05,
+    "M3": 0.054,
+    "VIA3": 0.055,
+    "M4": 0.054,
+    "VIA4": 0.08,
+    "M5": 0.097,
+    "VIA5": 0.09,
+    "M6": 0.097,
+    "VIA6": 0.09,
+    "M7": 0.097,
+    "VIA7": 0.09,
+    "M8": 0.097,
+    "VIA8": 0.09,
+    "M9": 0.097,
+    "VIA9": 0.14,
+    "M10": 0.162,
+    "VIA10": 0.14,
+    "M11": 0.162,
+    "VIA11": 0.8,
+    "M12": 0.936,
+    "VIA12": 0.8,
+    "M13": 0.936,
+    "RV": 1.0,
+    "AP": 1.45,
+    "HB_VIA": 0.5,
+    "HB_PAD": 0.8
+  },
+  "component_info": {
+    "demo": "feol_nmos_pmos_finger",
+    "pdk": "n5_1p13m_beol",
+    "version": "0.3.0",
+    "nw_placeholder": true,
+    "nw_note": "PMOS NW CAD (1;0) is placeholder_unverified — verify T-N05-CL-LE-001"
+  },
+  "notes": "Geometry metrics only (N5 1P13M research tech; thicknesses are research_approx unless marked drm_ws). Map length/width/thickness to R ~ rho*L/(w*t) and C patterns offline — not a foundry extraction."
+}
